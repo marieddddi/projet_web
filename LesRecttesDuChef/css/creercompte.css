@@ -1,0 +1,111 @@
+#corps p{
+    margin-left: 10px;
+    font-size: 25px;
+   width: 200px;
+   height:30px;
+    border: 1px solid #000;
+    background: #585454;
+    background: rgb(173, 178, 175);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 10px;
+}
+
+#login {
+    margin-left: 150px;
+    width: 100px;
+    padding: 10px;
+    height: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #000;
+    background: #585454;
+    background: rgb(173, 178, 175);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.log{
+width: 400px;
+margin-left: 10px;
+padding-left: 20px;
+    border: 1px solid #000;
+    background: rgb(242,243,235);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#passe {
+    margin-left: 110px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100px;
+    padding: 10px;
+    height: 1px;
+    border: 1px solid #000;
+    background: rgb(173, 178, 175);
+    background: rgba(0,0,0,.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+#passe2 {
+    margin-left: 30px;
+    width: 100px;
+    padding: 10px;
+    height: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #000;
+    background: #585454;
+    background: rgb(173, 178, 175);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#mail {
+    margin-left: 110px;
+    width: 100px;
+    padding: 10px;
+    height: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #000;
+    background: #585454;
+    background: rgb(173, 178, 175);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+#creer{
+    margin-left: 100px;
+    font-size: 15px;
+   width: 200px;
+   height:30px;
+   margin-top: 10px;
+    border: 1px solid #000;
+    background: #585454;
+    background: rgb(173, 178, 175);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+ #tout{
+    background-color: rgb(195, 195, 195);
+ }
+
+ #image{
+    margin-right: 600px;
+    float: right;
+    width: 20px;
+    height: 20px;
+ }

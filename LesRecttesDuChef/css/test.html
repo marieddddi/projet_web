@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ok</h1>
+</body>
+</html>
+<div class="banner">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="#">Accueil</a>
+          <a href="#">À propos</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="login">
+      <div class="icons">
+        <img src="ressources/moncompte.png" alt="Utilisateur">
+        <img src="ressources/moncompte.png" alt="Cercle" class="circle">
+      </div>
+      <div class="links">
+        <a href="#">Mon compte</a>
+        <span class="separator">|</span>
+        <a href="#">Se connecter</a>
+      </div>
+    </div>
+  </div>
+  
+
+  <style>
+  .banner {
+  background-color: #F5A623; /* couleur de fond de la bannière */
+  color: white; /* couleur du texte */
+  padding: 20px; /* espace intérieur de la bannière */
+  display: flex; /* affichage en mode flexbox */
+  justify-content: space-between; /* alignement des éléments sur la largeur */
+  align-items: center; /* alignement des éléments sur la hauteur */
+  flex-direction: column-reverse; /* inversion de l'ordre des éléments */
+}
+
+.logo {
+  display: flex; /* affichage en mode flexbox */
+  align-items: center; /* alignement des éléments sur la hauteur */
+}
+
+.logo img {
+  height: 50px; /* hauteur du logo */
+  margin-right: 20px; /* espace entre le logo et le menu */
+}
+
+.dropdown {
+  position: relative; /* positionnement relatif pour le menu déroulant */
+  display: inline-block; /* affichage en mode inline */
+}
+
+.dropbtn {
+  background-color: transparent; /* couleur de fond transparente */
+  border: none; /* suppression de la bordure */
+  color: white; /* couleur du texte */
+  font-size: 16px; /* taille du texte */
+  cursor: pointer; /* curseur en forme de main */
+  margin-right: 20px; /* espace à droite du logo */
+}
+
+.dropdown-content {
+  display: none; /* masquage par défaut du menu */
+  position: absolute; /* positionnement absolu pour le menu déroulant */
+  z-index: 1; /* empilement au-dessus des autres éléments */
+  background-color: #F5A623; /* couleur de fond du menu */
+  min-width: 160px; /* largeur minimale du menu */
+}
+
+.dropdown-content a {
+  color: white; /* couleur du texte du menu */
+  padding: 12px 16px; /* espacement interne des éléments du menu */
+  text-decoration: none; /* suppression du soulignement du texte */
+  display: block; /* affichage en mode bloc */
+}
+
+.dropdown-content a:hover {
+  background-color: #FFC870; /* couleur de fond au survol */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* affichage du menu au survol */
+}
+
+.login {
+display: flex; /* affichage en mode flexbox /
+align-items: center; / alignement des éléments sur la hauteur */
+}
+
+.icons {
+display: flex; /* affichage en mode flexbox /
+align-items: center; / alignement des éléments sur la hauteur */
+}
+
+.icons img {
+height: 30px; /* hauteur des icônes /
+margin-right: 10px; / espace entre les icônes */
+}
+
+.circle {
+height: 15px; /* hauteur du cercle /
+margin-right: 10px; / espace entre le cercle et le texte */
+}
+
+.links {
+display: flex; /* affichage en mode flexbox /
+align-items: center; / alignement des éléments sur la hauteur */
+}
+
+.links a {
+color: white; /* couleur du texte /
+text-decoration: none; / suppression du soulignement du texte /
+font-size: 16px; / taille du texte /
+margin-right: 10px; / espace entre les liens */
+}
+
+.separator {
+color: white; /* couleur du texte /
+font-size: 16px; / taille du texte /
+margin-right: 10px; / espace entre les séparateurs */
+}
+  
+  </style>

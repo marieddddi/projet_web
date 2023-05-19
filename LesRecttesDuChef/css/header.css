@@ -1,0 +1,107 @@
+/* Style de la bannière */
+#banniere {
+	background-color: #f8f8f800;
+	height: 100px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+  }
+  
+  /* Style des éléments à l'intérieur de la bannière */
+  #image_gauche {
+	float: left;
+	margin-left: 10px;
+	width: 200px;
+  }
+  
+  #menu_img {
+	float: left;
+	margin-right: 10px;
+  }
+  
+  #logo {
+	float: left;
+  }
+  
+  #secoco {
+	float: right;
+	margin-right: 10px;
+	margin-top: 25px;
+  }
+  
+  #moncompte {
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+  }
+  
+  #moncompte a {
+	color: #555;
+	font-size: 14px;
+	margin-left: 5px;
+	text-decoration: none;
+  }
+  
+  #moncompte img {
+	height: 25px;
+	margin-right: 5px;
+	width: 25px;
+  }
+  
+  /* Style pour le texte affiché par défaut (caché) */
+  #texte {
+	display: none;
+	width: 100%;
+	margin-top: 70px;
+	background-color: #F8F8F8;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+  }
+  
+  /* Style pour les liens dans le menu déroulant */
+  #texte a {
+	text-decoration: none;
+	color: #555;
+	margin-right: 10px;
+	font-size: 14px;
+  }
+  
+  /* Style pour l'image du menu déroulant */
+  #menu_img img {
+	cursor: pointer;
+  }
+  
+  /* Style pour les liens de connexion et déconnexion */
+  #secoco a {
+	color: #555;
+	font-size: 14px;
+	margin-right: 20px;
+	text-decoration: none;
+  }
+  
+  /* Style pour le lien de connexion et déconnexion lorsque l'utilisateur est connecté */
+  #secoco a:nth-child(2) {
+	margin-right: 0;
+  }
+  
+  /* Ajout de la marge en haut du contenu principal */
+  #contenu {
+	margin-top: 80px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
