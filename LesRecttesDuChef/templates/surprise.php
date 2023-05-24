@@ -26,50 +26,30 @@
 	<head>	
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Les recettes du chef</title>
-		<link rel="stylesheet" type="text/css" href="css/accueil.css"/>
+		<link rel="stylesheet" type="text/css" href="css/surprise.css"/>
 	</head>
 	<!-- **** F I N **** H E A D **** -->
 
 
 	<!-- **** B O D Y **** -->
 	<body>
+		<h1> SURPRISE ! </h1>
 
-		<h1 id="anciens_plannings"> MES ANCIENS PLANNINGS </h1>
-		<div id=liste>
+		<div id="corps">                    
 			<?php
-			echo '$_SESSION["id_pers"]='.$_SESSION["id_pers"];
-				$planning=liste_planning($_SESSION["id_pers"]);
-				mkLiens($planning, "num_semaine","num_semaine","index.php?view=planning","num_semaine");
-			?>
-		</div>
-
-		<h1 id="recettes_fav"> MES RECETTES FAVORIES </h1>
-		<div id=liste>
-			<?php
-				$recettes=liste_recette_fav($_SESSION['id_pers']);
-				mkLiens($url="index.php",$recettes['num_semaine'],$qs="view=planning&num_semaine=$planning","");
+					$alea = rand(1,20);
+					$clique= titre_recette($alea);
+                    echo "<div id='texte'>";
+					echo "Nous vous proposons une magnifique recette de ".$clique." !</div>";
+                    $res=image_recette($alea,0);
+					echo "<div id='cadre'><div id='image'> <img src=".$res."></div>";
+					echo "</div>";
+					mkLien($url="index.php","Voir la recette", $qs="view=page_recette&id_page_recette=$alea",$attrs="");
+				
+					
 			
 			?>
 		</div>
-
-		<h1 id="avis"> MES AVIS </h1>
-		<div id=liste>
-			<?php
-				$avis=liste_avis_personne($_SESSION['id_pers']);
-				mkLiens($avis,"","","");
-			?>
-		</div>
-
-		<h1 id="coordonnes"> MES COORDONNÉES </h1>
-		<div id=liste>
-			<?php 
-			echo "<div id='pseudo'> PSEUDO ".$_SESSION['pseudo']."</div>";
-			$mail= "lol";
-			echo "<div id='pseudo'> ADRESSE MAIL ".$mail."</div>";
-			?>
-			
-		</div>
-
 	</body>
 	<!-- **** F I N **** B O D Y **** -->
 

@@ -1,6 +1,7 @@
 <?php
 
 	include_once("libs/modele.php");
+	include_once("libs/maLibForms.php");
 	//C'est la propriété php_self qui nous l'indique : 
 	// Quand on vient de index : 
 	// [PHP_SELF] => /chatISIG/index.php 
@@ -33,23 +34,29 @@
 
 		<!-- **** B O D Y **** -->
 		<body>
-			<h1 id="pres">Nos suggestions du jour</h1>
-
+			<div id="t">
+			<h1> Nos suggestions du jour</h1></div>
+<!--
 			<div id="corps">                      
-				<?php
+				<?php/*
+				$tab_result = array();
 					for($j=0;$j<3;$j++){
 						echo "<div class='ligne'>";
 						for($i=0;$i<3;$i++){
-							$alea = rand(1,66);
+							$alea = rand(1,20);
+							if(!in_array($alea, $tab_result)){
+							$tab_result[] = $alea;
 							$res=image_recette($alea,1);
 							echo "<div class='image'> <img src=".$res."></div>";
 							$clique= titre_recette($alea);
-							echo "<div class='titre'><a href='google.com'>".$clique."</a></div>";
-						}	
+							echo "<div class='titre'>" ;
+							mkLien($url="index.php",$clique, $qs="view=page_recette&id_page_recette=$alea",$attrs="");
+							echo"</div>";
+						}	}
 						echo "</div>";
-					}
+					}*/
 				?>
-			</div>
+			</div>-->
 		</body>
 	<!-- **** F I N **** B O D Y **** -->
 

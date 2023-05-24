@@ -42,25 +42,75 @@
 					switch($i)
 					{
 						case 0 :
-							echo "<p> En apéritif : </p>";
-							break;
-						case 1 :
-							echo "<p> En entrée : </p>";
-							break;
-						case 2 :
-							echo "<p> En plat : </p>";
-							break;
-						case 3 :
-							echo "<p> En dessert : </p>";
-							break;
-					}         
-					$alea = rand(1,66);
+
+							$alea = rand(1,21);
+					if(verifier_recette_bdd($alea,$i)!=NULL){
+						echo "<p> En apéritif : </p>";
 					$res=image_recette_fete($alea,$i);
 					echo "<div class='image'> <img src=".$res."></div>";
 					$clique= titre_recette_fete($alea,$i);
 					echo "<div class='titre'><a href='google.com'>".$clique."</a></div>";
-				}	
-				echo "</div>";
+					echo "</div>";
+					break;	
+				}
+					else{
+						$i--;
+							
+							break;}
+						case 1 :
+							$alea = rand(1,21);
+					if(verifier_recette_bdd($alea,$i)!=NULL){
+						echo "<p> En entrée : </p>";
+					$res=image_recette_fete($alea,$i);
+					echo "<div class='image'> <img src=".$res."></div>";
+					$clique= titre_recette_fete($alea,$i);
+					echo "<div class='titre'><a href='google.com'>".$clique."</a></div>";
+					echo "</div>";
+					break;	
+					}
+					else{
+						$i--;
+							
+							break;}
+							
+					
+						case 2 :
+							$alea = rand(1,21);
+							if(verifier_recette_bdd($alea,$i)!=NULL){
+								echo "<p> En plat : </p>";
+							$res=image_recette_fete($alea,$i);
+							echo "<div class='image'> <img src=".$res."></div>";
+							$clique= titre_recette_fete($alea,$i);
+							echo "<div class='titre'><a href='google.com'>".$clique."</a></div>";
+							echo "</div>";	
+							break;	
+						}
+							else{
+								$i--;
+									
+									break;}
+							
+						case 3 :
+							$alea = rand(1,21);
+							if(verifier_recette_bdd($alea,$i)!=NULL){
+								echo "<p> En dessert : </p>";
+							$res=image_recette_fete($alea,$i);
+							echo "<div class='image'> <img src=".$res."></div>";
+							$clique= titre_recette_fete($alea,$i);
+							echo "<div class='titre'><a href='google.com'>".$clique."</a></div>";
+							echo "</div>";	
+							break;	
+						}
+							else{
+								$i--;
+									
+									break;}
+							
+						
+					}      
+				}   
+					
+			
 			?>
 		</div>
 	</body>

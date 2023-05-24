@@ -13,27 +13,6 @@ Dans ce fichier, on définit diverses fonctions permettant de récupérer des do
 // inclure ici la librairie faciliant les requêtes SQL
 
 
-function listerUtilisateurs($classe = "both")
-{
-	// Cette fonction liste les utilisateurs de la base de données 
-	// et renvoie un tableau d'enregistrements. 
-	// Chaque enregistrement est un tableau associatif contenant les champs 
-	// id,pseudo,blacklist,connecte,couleur
-
-	// Lorsque la variable $classe vaut "both", elle renvoie tous les utilisateurs
-	// Lorsqu'elle vaut "bl", elle ne renvoie que les utilisateurs blacklistés
-	// Lorsqu'elle vaut "nbl", elle ne renvoie que les utilisateurs non blacklistés
-  $sql = "SELECT *
-          FROM users";
-  if ($classe == "bl") {
-    $sql = $sql . " WHERE blacklist";
-  }
-  if ($classe == "nbl") {
-    $sql = $sql . " WHERE NOT blacklist";
-  }
-  return parcoursRs(SQLSelect($sql));
-}
-
 
 function image_recette($id_recette,$num){
 	switch ($num){
@@ -41,24 +20,29 @@ function image_recette($id_recette,$num){
 			$sql = "SELECT lien_presentation 
 				FROM ILLUSTRATIONS
 				WHERE id_page_recette = '$id_recette'";
+				break;
 		case 2:
-			$sql = "SELECT lien_photo
+			$sql = "SELECT INGREDIENTS.lien_photo
 				FROM INGREDIENTS 
-				JOIN ILLUSTRASTIONS ON INGREDIENTS.id_ingredient = ILLUSTRATIONS.id_ingredient1
-				WHERE id_page_recette = '$id_recette'";
+				JOIN ILLUSTRATIONS ON INGREDIENTS.id_ingredient = ILLUSTRATIONS.id_ingredient1
+				WHERE ILLUSTRATIONS.id_page_recette = '$id_recette'";
+				break;
 		case 3:
-			$sql = "SELECT lien_photo
+			$sql = "SELECT INGREDIENTS.lien_photo
 				FROM INGREDIENTS 
-				JOIN ILLUSTRASTIONS ON INGREDIENTS.id_ingredient = ILLUSTRATIONS.id_ingredient2
-				WHERE id_page_recette = '$id_recette'";
+				JOIN ILLUSTRATIONS ON INGREDIENTS.id_ingredient = ILLUSTRATIONS.id_ingredient2
+				WHERE ILLUSTRATIONS.id_page_recette = '$id_recette'";
+				break;
 		case 4: 
 			$sql = "SELECT lien_final
 				FROM ILLUSTRATIONS
 				WHERE id_page_recette = '$id_recette'";
+				break;
 		default:
 			$sql = "SELECT lien_presentation 
 				FROM ILLUSTRATIONS
 				WHERE id_page_recette = '$id_recette'";
+				break;
 	}
 	return SQLGetChamp($sql);
 }
@@ -84,14 +68,14 @@ function creer_compte($pseudo, $mdp, $mail){
   return SQLGetChamp($sql);
  }
 
-function verifUserBdd($login,$passe)
+function verifUserBdd($pseudo,$mot_de_passe)
 {
 	// Vérifie l'identité d'un utilisateur 
 	// dont les identifiants sont passes en paramètre
 	// renvoie faux si user inconnu
 	// renvoie l'id de l'utilisateur si succès
 
-	$SQL="SELECT id_pers FROM PERSONNE WHERE pseudo='$login' AND mot_de_passe='$passe'";
+	$SQL="SELECT id_pers FROM PERSONNE WHERE pseudo='$pseudo' AND mot_de_passe='$mot_de_passe'";
 
 	return SQLGetChamp($SQL);
 	// si on avait besoin de plus d'un champ
@@ -126,6 +110,79 @@ function liste_planning($id_pers){
 	return parcoursRS(SQLSelect($sql));
 }
 
+function tempsPreparation($id_recette){
+	$sql="SELECT temps_prep 
+	FROM PAGE_RECETTES
+	WHERE id_page_recette='$id_recette' ";
+	return SQLGetChamp($sql);
+}
+
+function tempsCuisson($id_recette){
+	$sql="SELECT temps_cuisson 
+	FROM PAGE_RECETTES
+	WHERE id_page_recette='$id_recette' ";
+	return SQLGetChamp($sql);
+}
+
+
+function note($id_recette){
+	$sql="SELECT note 
+	FROM PAGE_RECETTES
+	WHERE id_page_recette='$id_recette' ";
+	return SQLGetChamp($sql);
+}
+
+function Liste_ingredients($id_recette)
+{
+	$sql="SELECT I.nom, L.quantite, L.unite_universelle
+	FROM INGREDIENTS AS I JOIN LISTE_INGREDIENTS AS L ON I.id_ingredient=L.id_ingredient
+	JOIN PAGE_RECETTES AS P ON P.id_liste_ingredents=L.id_liste_ingredients
+	WHERE P.id_page_recette='$id_recette' ";
+	return parcoursRS(SQLSelect($sql));
+}
+
+function liste_etapes($id_recette)
+{
+	$sql="SELECT liste_etape
+	FROM PAGE_RECETTES
+	WHERE id_page_recette='$id_recette' ";
+	return SQLGetChamp($sql) ;
+}
+
+function liste_avis($id_recette)
+{
+	$sql="SELECT A.titre, A.texte_avis, PERSONNE.pseudo
+	FROM PAGE_RECETTES AS P JOIN LISTE_AVIS AS L ON P.id_liste_avis=L.id_liste_avis
+	JOIN AVIS AS A ON A.id_avis=L.id_avis
+	JOIN PERSONNE ON PERSONNE.id_pers=A.id_pers
+	WHERE P.id_page_recette='$id_recette' ";
+	return parcoursRS(SQLSelect($sql));
+}
+
+function liste_avis_personne($id_pers)
+{
+	$sql = "SELECT texte_avis FROM `AVIS` WHERE id_pers = '$id_pers'";
+	return parcoursRS(SQLSelect($sql));
+}
+
+function liste_recette_fav($id_pers)
+{
+	$sql = "SELECT lien_presentation 
+	FROM `ILLUSTRATIONS`
+	JOIN  PAGE_RECETTES ON PAGE_RECETTES.id_page_recette = ILLUSTRATIONS.id_page_recette
+	JOIN FAVORIS ON FAVORIS.id_page_recette = PAGE_RECETTES.id_page_recette
+	WHERE id_pers = '$id_pers'";
+	return parcoursRS(SQLSelect($sql));
+}
+
+
+function verifier_recette_bdd($id_recette,$type)
+{
+	$sql="SELECT id_page_recette
+	FROM PAGE_RECETTES
+	WHERE id_page_recette='$id_recette' AND type='$type' ";
+	return SQLGetChamp($sql);
+}
 
 ?>
 

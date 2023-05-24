@@ -1,15 +1,14 @@
 <?php
 
-	// Si la page est appelée directement par son adresse, on redirige en passant pas la page index
-	if (basename($_SERVER["PHP_SELF"]) != "index.php")
-	{
-		header("Location:../index.php?view=login");
-		die("");
-	}
+// Si la page est appelée directement par son adresse, on redirige en passant pas la page index
+if (basename($_SERVER["PHP_SELF"]) != "index.php") {
+	header("Location:../index.php?view=login");
+	die("");
+}
 
-	// Chargement eventuel des données en cookies
-	$login = valider("login", "COOKIE");
-	$passe = valider("passe", "COOKIE"); 
+// Chargement eventuel des données en cookies
+$login = valider("login", "COOKIE");
+$passe = valider("passe", "COOKIE");
 
 ?>
 
@@ -19,7 +18,8 @@
 
 
 	<!-- **** H E A D **** -->
-	<head>	
+
+	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Les recettes du chef</title>
 		<link rel="stylesheet" type="text/css" href="css/login.css">
@@ -30,27 +30,29 @@
 	<!-- **** B O D Y **** -->
 	<body id="tout">
 		<div id="corps">
-		<div id="image">
-        <img src="ressources/chef.png"/>
-        </div>
-			<p>Se connecter</p>
+			<div id="image">
+				<img src="ressources/chef.png" />
+			</div>
+			<p id="mess">Se connecter</p>
 
 			<div id="formLogin">
 				<form action="controleur.php" method="GET">
-					<div class ="log"><label for="login"> Pseudo  </label><input type="text" id="login" name="login" value="<?php echo $login;?>" /></div><br />
-					<div class ="log"><label for="passe">Mot de passe  </label><input type="password" id="passe" name="passe" value="<?php echo $passe;?>" /></div><br />
-					
+					<div class="log"><label for="login"> Pseudo </label><input type="text" id="login" name="login"
+							value="<?php echo $login; ?>" /></div><br />
+					<div class="log"><label for="passe">Mot de passe </label><input type="password" id="passe" name="passe"
+							value="<?php echo $passe; ?>" /></div><br />
+
 					<div id="coco">
-						<input type="submit" name="action" value="SE CONNECTER" id="compte"/>
+						<input type="submit" name="action" value="SE CONNECTER" id="compte" />
 					</div>
-					
-					<div id="coco1"><input type="submit" name="action" value="INSCRIVEZ-VOUS EN CLIQUANT ICI" id="pascompte"/></div>
+
+					<div id="coco1"><input type="submit" name="action" value="INSCRIVEZ-VOUS EN CLIQUANT ICI"
+							id="pascompte" /></div>
 				</form>
 			</div>
-
-
 		</div>
 	</body>
-<!-- **** F I N **** B O D Y **** -->
 
 
+	<!-- **** F I N **** B O D Y **** -->
+</html>

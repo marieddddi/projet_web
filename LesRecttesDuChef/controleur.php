@@ -1,3 +1,4 @@
+
 <?php
 
 	session_start();
@@ -53,8 +54,10 @@
 							setcookie("remember",false, time()-3600);
 						}
 					}
-				}
-			// On redirigera vers la page index automatiquement
+				} 
+			// On affiche deconnexion?>
+		
+<?php
 			break;
 
 		
@@ -109,12 +112,12 @@
 			break;
 	  
 
-			case 'ModifierCompte' :
-				$qs = array("view" => "modifierCompte");
+			case "Mon compte" :
+				$qs = array("view" => "mon_compte");
 			break;
 	  
 
-			case 'ValiderModificationCompte' :
+			case "ValiderModificationCompte" :
 				$qs = array("view" => "accueil");
 				$qs["msg"] = "Compte modifié avec succès";
 				$qs["msgType"] = "success";
@@ -128,28 +131,41 @@
 			break;
 
 
-			case 'generateur' :
+			case "generateur" :
 				$qs = array("view" => "generateur");
 			break;
 
 
-			case 'galerie' :
+			case "galerie" :
 				$qs = array("view" => "galerie");
 			break;
 
 
-			case 'surprise' :
+			case "surprise" :
 				$qs = array("view" => "surprise");
 			break;
 
 
-			case 'menu_de_fete' :
+			case "MENU DE FETE" :
 				$qs = array("view" => "menu_de_fete");
+				
 			break;
 
 
-			case 'propos' :
+			case "propos":
 				$qs = array("view" => "propos");
+			break;
+
+			case "contact":
+				$qs = array("view" => "contact");
+			break;
+
+			case "equipe":
+				$qs = array("view" => "equipe");
+			break;
+
+			case "sevices":
+				$qs = array("view" => "sevices");
 			break;
 			
 		}

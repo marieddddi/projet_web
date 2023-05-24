@@ -28,7 +28,7 @@
 			<?php
 				//TODO:  Si l'utilisateur est connecte, on affiche un lien de deconnexion 
 				if (valider("connecte", "SESSION")) {
-					echo '<a href="controleur.php?action=Logout">Déconnexion</a>';
+					//echo '<a href="controleur.php?action=Logout">Déconnexion</a>';
 				}
 			?>
 		</div>
