@@ -1,62 +1,45 @@
-#t > h1 {
+#t {
+    margin-top: 100px;
+    margin-bottom: 50px;
+   
+    }
+  
+  #t > h1 {
     color: white;
     border-bottom: 1px solid white;
     text-align: center;
     font-size: 40px;
     width: 900px;
     text-transform: uppercase;
+
   }
-  
-/*
-.titre{
-    color:black;
-    font-size: 20px;
+  .ligne {
+    display: flex;
+    margin-bottom: 20px;
 }
+
+.image-container {
+    width: 33.33%;
+    text-align: center;
+    margin-right: 30px;
+}
+
+.image img{
+    width: 500px; /* Largeur souhaitée pour les images */
+    height: 300px; /* Hauteur souhaitée pour les images */
+    object-fit: cover;
+}
+
+.titre {
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+  
 
 .titre a{
     color: black;
 
     
 }
-
-.image img{
-    margin-left: 10px;
-    margin-bottom: 10px;
-    margin: 5px;
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    text-align: center;
-display: block;
-position: relative;
-   
-}
-
-.ligne{
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    
-}
-
-.image {
-    width: 300px; 
-    height: 300px; 
-    overflow: hidden;
-    position: relative;
-}
-
-.image img {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-   height: auto;
-    position: absolute;
-    object-fit: cover;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}*/

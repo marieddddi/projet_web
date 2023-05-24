@@ -1,0 +1,43 @@
+
+
+
+#titre{
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Chewy';
+    color: black;
+    font-weight: bold;
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+
+#image img{
+    margin-left: 200px;
+    width: 500px; /* Largeur souhaitée pour les images */
+    height: 300px; /* Hauteur souhaitée pour les images */
+    object-fit: cover;
+    float: left;
+    margin-right: 20px;
+}
+
+.tempsPrep img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 10px;
+}
+
+.temps{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-style:italic ;
+}
+
+.tempsPrep{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}

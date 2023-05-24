@@ -26,7 +26,7 @@
 		<head>	
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 			<title>Les recettes du chef</title>
-			<link rel="stylesheet" type="text/css" href="css/accueil.css"/>
+			<link rel="stylesheet" type="text/css" href="css/page_recette.css"/>
 		</head>
 		<!-- **** F I N **** H E A D **** -->
 
@@ -49,38 +49,39 @@
 					die("idpage_recette manquant");
 				}
 				
-                //changer pour chaque recette la que test !!!
                 $titre=titre_recette($idRecette);
-                echo $titre;
+                echo "<div id='titre'>".$titre."</div>";
                 $photopres=image_recette($idRecette,1);
-                echo "<div class='image'> <img src=".$photopres."></div>";
+                echo "<div id='image'> <img src=".$photopres."></div>";
                 $tempsPrep=tempsPreparation($idRecette);
                 if (substr($tempsPrep, 0, 3) === "00:") {
                     $tempsPrep = substr($tempsPrep, 3);
                 }
-                echo "<div class='tempsPrep'> Préparation ".$tempsPrep." minutes </div>";
+                echo "<div class='tempsPrep'> <img src ='ressources/tempsPrep.png'> Préparation </div> ";
+				echo "<div class=temps>".$tempsPrep." minutes </div>";
                 $tempsCuis=tempsCuisson($idRecette);
                 if (substr($tempsCuis, 0, 3) === "00:") {
                     $tempsCuis = substr($tempsCuis, 3);
                 }
-                echo "<div class='tempsCuisson'> Cuisson ".$tempsCuis." minutes </div>";
+                echo "<div class='tempsPrep'> <img src ='ressources/tempsCuiss.png'> Cuisson </div> ";
+				echo "<div class=temps>".$tempsCuis." minutes </div>";
                 $note=note($idRecette);
-                echo "<div class='note'> Laisse ton avis ! ".$note."/5 </div>";
+                echo "<div id='note'> Laisse ton avis ! ".$note."/5 </div>";
 				$listeIngredients=Liste_ingredients($idRecette);
 				echo "LES INGRÉDIENTS :";
 
 				foreach($listeIngredients as $val) echo "<div class='ingredient'>" . $val['quantite'] . " ". $val['unite_universelle']." ".$val['nom']. "</div>";
                 $photoingr1=image_recette($idRecette,2);
 				$photoingr2=image_recette($idRecette,3);
-                echo "<div class='imageIngredients'> <img src=".$photoingr1."> <img src=".$photoingr2."></div>";
+                echo "<div id='imageIngredients'> <img src=".$photoingr1."> <img src=".$photoingr2."></div>";
 
 				$liste_etape=liste_etapes($idRecette);
 				echo "LES ETAPES :".$liste_etape;
 
 				$photofinal=image_recette($idRecette,4);
-				echo "<div class='imageFinal'> <img src=".$photofinal."></div>";
+				echo "<div id='imageFinal'> <img src=".$photofinal."></div>";
 				$avis=liste_avis($idRecette);
-				foreach($avis as $val) echo "<div class='avis'>" . $val['titre'] . " ". $val['texte_avis']." ".$val['pseudo']. "</div>";
+				foreach($avis as $val) echo "<div id='avis'>" . $val['titre'] . " ". $val['texte_avis']." ".$val['pseudo']. "</div>";
                
 
 				

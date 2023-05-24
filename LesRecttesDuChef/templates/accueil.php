@@ -36,9 +36,9 @@
 		<body>
 			<div id="t">
 			<h1> Nos suggestions du jour</h1></div>
-<!--
+
 			<div id="corps">                      
-				<?php/*
+				<?php
 				$tab_result = array();
 					for($j=0;$j<3;$j++){
 						echo "<div class='ligne'>";
@@ -47,16 +47,22 @@
 							if(!in_array($alea, $tab_result)){
 							$tab_result[] = $alea;
 							$res=image_recette($alea,1);
+							echo "<div class='image-container'>";
 							echo "<div class='image'> <img src=".$res."></div>";
 							$clique= titre_recette($alea);
 							echo "<div class='titre'>" ;
 							mkLien($url="index.php",$clique, $qs="view=page_recette&id_page_recette=$alea",$attrs="");
 							echo"</div>";
-						}	}
+							echo"</div>";
+						}	
+						else {
+							$i--;
+						}
+					}
 						echo "</div>";
-					}*/
+					}
 				?>
-			</div>-->
+			</div>
 		</body>
 	<!-- **** F I N **** B O D Y **** -->
 
