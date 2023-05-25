@@ -2,7 +2,12 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: rgba(0, 33, 64, 0.79)!important;
+	margin-right: -5px;
+	margin-left: -5px;
+	margin-top: -5px;
 }
+
 
 #image_gauche {
 	display: flex;
@@ -12,7 +17,10 @@
 #image_gauche img {
 	margin-right: 10px;
 }
-
+#logo1 img{
+	height: 80px;
+	width: 80px;
+}
 #logo1:hover {
 	cursor: pointer;
 }
@@ -21,6 +29,10 @@
 	cursor: pointer;
 }
 
+#logo3 img{
+	height: 70px;
+	width: 70px;
+}
 #moncompte {
 	display: flex;
 	align-items: center;
@@ -28,37 +40,39 @@
 
 #moncompte img {
 	margin-right: 5px;
-	width: 20px;
-	height: 20px;
+	width: 10px;
+	height: 10px;
+	align-items: center;
 }
 
 #secoco {
 	display: flex;
 	align-items: flex-start;
 	margin-left: auto;
-	margin-right: 0;
+	margin-right: 10px;
 	margin-top: 12px;
 }
 
 #secoco img {
 	margin-bottom: 5px;
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
+	margin-left: 18px;
 }
 
 #secoco .text {
 	display: flex;
 	flex-direction: column;
-	margin-left: 5px;
+	margin-left: 15px;
 }
 
 #secoco a {
 	text-decoration: none;
-	color: #333;
+	color:white;
 }
 
 #secoco a:hover {
-	color: #ff0000;
+	color: black;
 }
 
 #navigation {

@@ -66,9 +66,17 @@
                 echo "<div class='tempsPrep'> <img src ='ressources/tempsCuiss.png'> Cuisson </div> ";
 				echo "<div class=temps>".$tempsCuis." minutes </div>";
                 $note=note($idRecette);
-                echo "<div id='note'> Laisse ton avis ! ".$note."/5 </div>";
+                echo "<div id='etoile'> <div id='avis'> Laisse ton avis ! <a href='index.php?view=avis&id_page_recette=$idRecette'> <img src='ressources/avis.png'> </a> </div> </br> ";
+				for ($i=0; $i<5; $i++) {
+					if ($i<$note) {
+						echo "<img src='ressources/etoile.png' alt='etoile'>";
+					} else {
+						echo "<img src='ressources/etoileVide.png' alt='etoile' >";
+					}
+				}
+				echo "</div> <div id='note'>" .$note."/5 </div>";
 				$listeIngredients=Liste_ingredients($idRecette);
-				echo "LES INGRÉDIENTS :";
+				echo "</br> LES INGRÉDIENTS :";
 
 				foreach($listeIngredients as $val) echo "<div class='ingredient'>" . $val['quantite'] . " ". $val['unite_universelle']." ".$val['nom']. "</div>";
                 $photoingr1=image_recette($idRecette,2);

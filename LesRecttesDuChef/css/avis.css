@@ -1,0 +1,38 @@
+
+  h1 {
+    color: black;
+  }
+  
+  form {
+    background-color:rgb(117, 116, 117);
+    padding: 20px;
+    border-radius: 5px;
+    }
+  
+  input[type="text"],
+  textarea {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    resize: vertical;
+  }
+  
+  input[type="submit"] {
+    background-color: #4d4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #303b60;
+  }
+  
+  .log p {
+    color: #060606;
+    font-size: 18px;
+    font-weight: 700;
+  } 

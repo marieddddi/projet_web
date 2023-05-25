@@ -115,7 +115,10 @@
 			case "Mon compte" :
 				$qs = array("view" => "mon_compte");
 			break;
-	  
+				
+			case "planning" :
+				$qs = array("view" => "planning");
+			break;
 
 			case "ValiderModificationCompte" :
 				$qs = array("view" => "accueil");
@@ -168,7 +171,23 @@
 				$qs = array("view" => "sevices");
 			break;
 			
-		}
+			case "Envoyer":
+
+				
+				$titre = valider("titre");
+				$contenu = valider("contenu");
+				$id_recette = valider("id_recette");
+				$sessionIdPers = $_SESSION["id_pers"];
+				echo $sessionIdPers;
+				posterAvis($_SESSION["id_pers"],$id_recette,$titre,$contenu);
+				$qs = array("msg" => " Avis posté avec succès","view" => "accueil");
+			break;	
+
+
+		
+		
+		
+			}
 		
 	}
 

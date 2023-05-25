@@ -34,12 +34,12 @@
 		<div id="banniere">
 			<div id="image_gauche">
 				<div id="logo1">    
-					<img src="ressources/logo.png" alt="Logo 1" />
+					<img src="ressources/menu.png" alt="Logo 1" />
 				</div>
 
 				<div id="logo2">
 					<a href="index.php?view=accueil">
-						<img src="ressources/logo.png" alt="Logo 2" />
+						<img src="ressources/logoo.png" alt="Logo 2" />
 					</a>
 				</div>
 			</div>
@@ -49,17 +49,17 @@
 				<?php if (!(isset($_SESSION['id_pers'])) && valider("connecte", "SESSION")) : ?>
 					<div id="moncompte" class="text">
 						<a href="index.php?view=mon_compte" class="text">
-							<img src="ressources/moncompte.png" alt="Mon compte" />
+							<img src="ressources/moncompte2.png" alt="Mon compte" />
 							<span>Mon compte</span>
 						</a>
 					</div>
 					<a href="controleur.php?action=Logout" class="text">
-						<img src="ressources/moncompte.png" alt="Se déconnecter" />
+						<img src="ressources/deco.png" alt="Se déconnecter" />
 						<span>Se déconnecter</span>
 					</a>
 				<?php else : ?>
 					<a href="index.php?view=login" class="text">
-						<img src="ressources/moncompte.png" alt="Se connecter" />
+						<img src="ressources/moncompte2.png" alt="Se connecter" />
 						<span>Se connecter</span>
 					</a>		
 				<?php endif; ?>
@@ -69,7 +69,7 @@
 		<div id="navigation">
 			<div class="nav-links">
 				<div id="logo3">    
-					<img src="ressources/logo.png" alt="Logo 3" />
+					<img src="ressources/menu2.png" alt="Logo 3" />
 				</div> 
 				<br><br>
 				<a href="index.php?view=accueil">ACCUEIL</a>

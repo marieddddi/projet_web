@@ -28,7 +28,6 @@ $passe = valider("passe", "COOKIE");
 
 
 	<!-- **** B O D Y **** -->
-	<body id="tout">
 		<div id="corps">
 			<div id="image">
 				<img src="ressources/chef.png" />
@@ -50,7 +49,6 @@ $passe = valider("passe", "COOKIE");
 							id="pascompte" /></div>
 				</form>
 			</div>
-		</div>
 	</body>
 
 

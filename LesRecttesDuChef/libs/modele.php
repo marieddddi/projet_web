@@ -184,5 +184,15 @@ function verifier_recette_bdd($id_recette,$type)
 	return SQLGetChamp($sql);
 }
 
+function posterAvis($id_pers,$id_recette,$titre,$texte_avis)
+{
+	$sql="INSERT INTO AVIS (titre, texte_avis, id_pers)
+	VALUES ('$titre','$texte_avis','$id_pers')";
+	SQLInsert($sql);
+	$id_avis=SQLGetChamp("SELECT id_avis FROM AVIS WHERE id_pers='$id_pers' AND titre='$titre' AND texte_avis='$texte_avis'");
+	$id_liste_avis=SQLGetChamp("SELECT id_liste_avis FROM PAGE_RECETTES WHERE id_page_recette='$id_recette'");
+	SQLInsert("INSERT INTO LISTE_AVIS (id_avis, id_liste_avis) VALUES ('$id_avis','$id_liste_avis')");
+}
+
 ?>
 
