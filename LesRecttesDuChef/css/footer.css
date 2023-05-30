@@ -1,0 +1,78 @@
+/* Styles généraux */
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	text-align: center;
+}
+
+/* Styles du pied de page */
+#pied {
+	position: fixed;
+	/* Utilisez "position: fixed" pour fixer le pied de page */
+	background-color: rgba(0, 33, 64,1);
+	height: 200px;
+	/* Ajustez la hauteur selon vos besoins */
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+/* Styles de l'arc de cercle */
+#arc-de-cercle {
+	position: absolute;
+	bottom: 100px;
+	left: 60%;
+	transform: translateX(-50%);
+	width: 150%;
+	height: 500px;
+	border-radius: 90%;	
+	background-color: #adabab;
+}
+
+
+#pied a {
+	position: relative;
+	display: block;
+	color: white;
+	text-align: left;
+	line-height: 300px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 5%;
+  }
+  
+
+
+/* Styles pour la fenêtre pop-up */
+.popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s;
+}
+
+.popup {
+	text-align: left;
+	background-color: white;
+	padding: 20px;
+	border-radius: 5px;
+	max-width: 60%;
+	max-height: 80%;
+	overflow: auto;
+}
+
+.popup-overlay.show {
+	visibility: visible;
+	opacity: 1;
+}
+
